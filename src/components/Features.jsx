@@ -31,10 +31,10 @@ const Features = () => {
                             key={i}
                             className="group p-8 bg-white border border-slate-200 rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl text-center space-y-6"
                         >
-                            <div className="mx-auto w-16 h-16 bg-blue-600/10 rounded-2xl flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all">
+                            <div className="mx-auto w-16 h-16 bg-slate-400 rounded-2xl flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-all">
                                 <f.icon className="w-8 h-8" />
                             </div>
-                            <h4 className="text-xl font-bold">{f.title}</h4>
+                            <h4 className="text-xl font-bold text-slate-900">{f.title}</h4>
                             <p className="text-slate-500">{f.desc}</p>
                         </div>
                     ))}
