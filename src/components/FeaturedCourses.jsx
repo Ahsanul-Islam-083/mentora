@@ -2,11 +2,12 @@ import { Button } from "@heroui/react";
 import { ArrowRight } from "lucide-react";
 
 import FeaturedCard from "./FeaturedCard";
-import { fetchCourses } from "@/lib/courses/data";
+import { fetchFeaturedCourses } from "@/lib/courses/data";
+import Link from "next/link";
 
 
 const FeaturedCourses = async () => {
-    const courses = await fetchCourses();
+    const courses = await fetchFeaturedCourses();
     // console.log(courses);
 
     return (
@@ -20,13 +21,15 @@ const FeaturedCourses = async () => {
                             Handpicked premium courses designed to help you master the most in-demand skills in the industry today.
                         </p>
                     </div>
-                    <Button
-                        variant="flat"
-                        color="primary"
-                        className="rounded-full font-bold group"
-                    >
-                        View All Courses <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
+                    <Link href={'/courses'}>
+                        <Button
+                            variant="flat"
+                            color="primary"
+                            className="rounded-full font-bold group"
+                        >
+                            View All Courses <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                        </Button>
+                    </Link>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

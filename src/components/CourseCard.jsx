@@ -30,7 +30,8 @@ const CourseCard = ({ course }) => {
             <div className="p-8 flex flex-col grow space-y-4">
                 <div className="space-y-2">
                     <Link href={`/courses/${_id}`}>
-                        <h3 className="text-xl font-bold leading-tight line-clamp-2 hover:text-blue-600 transition-colors">
+                        <h3 className="text-xl font-bold leading-tight line-clamp-2 hover:text-blue-600
+                        hover:underline transition-colors">
                             {title}
                         </h3>
                     </Link>
@@ -51,13 +52,15 @@ const CourseCard = ({ course }) => {
                 <div className="pt-6 mt-auto border-t border-slate-100 flex justify-between items-center">
                     <span className="text-2xl font-black text-blue-600">${price}</span>
 
+                    <Link href={`/courses/${_id}`}>
                     <Button
-                        variant="flat"
+                        variant="outline"
                         color="primary"
-                        className="font-bold rounded-xl px-6"
+                        className="font-bold rounded-xl px-6 border-blue-600"
                     >
                         Learn More
                     </Button>
+                    </Link>
 
                 </div>
             </div>

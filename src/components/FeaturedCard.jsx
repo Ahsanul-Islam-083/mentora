@@ -34,7 +34,7 @@ const FeaturedCard = ({ course }) => {
             </div>
             <div className="p-5 flex flex-col grow space-y-3">
                 <Link href={`/courses/${_id}`}>
-                    <h4 className="font-bold text-slate-900 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                    <h4 className="font-bold text-slate-900 line-clamp-2 group-hover:text-blue-600 hover:underline transition-colors">
                         {title}
                     </h4>
                 </Link>
