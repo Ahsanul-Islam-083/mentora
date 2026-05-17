@@ -15,9 +15,10 @@ const FeaturedCard = ({ course }) => {
                 <Image src={thumbnail || 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600'}
 
                     alt="Course Image"
-                    height={400}
-                    width={640}
+                    // height={400}
+                    // width={640}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+                    fill
                     className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
                 <div className="absolute top-3 right-3">

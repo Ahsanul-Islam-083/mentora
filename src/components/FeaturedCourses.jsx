@@ -2,11 +2,11 @@ import { Button } from "@heroui/react";
 import { ArrowRight } from "lucide-react";
 
 import FeaturedCard from "./FeaturedCard";
-// import { fetchFeaturedCourses } from "@/lib/courses/data";
+import { fetchCourses } from "@/lib/courses/data";
 
 
 const FeaturedCourses = async () => {
-    // const courses = await fetchFeaturedCourses();
+    const courses = await fetchCourses();
     // console.log(courses);
 
     return (
@@ -29,12 +29,12 @@ const FeaturedCourses = async () => {
                     </Button>
                 </div>
 
-                {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {
                         courses?.map(course => <FeaturedCard key={course?._id} course={course} />)
                     }
 
-                </div> */}
+                </div>
             </div>
         </section>
     );

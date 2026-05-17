@@ -46,7 +46,7 @@ export function MainNavbar() {
               <Link href="/login" className="font-medium text-slate-700 hover:text-blue-600 transition-colors">Login</Link>
               <Link href="/register">
 
-                <Button color="primary" className="font-bold bg-blue-600 rounded-full px-8 py-3 shadow-lg shadow-blue-600/20">
+                <Button color="primary" className="font-bold rounded-full px-8 shadow-lg shadow-blue-600/20">
                   Join Free
                 </Button>
               </Link>
@@ -62,7 +62,7 @@ export function MainNavbar() {
                   className="w-10 h-10 rounded-full object-cover ring-2 ring-blue-600/10"
                 />
                 <div className="text-left hidden lg:block">
-                  <p className="text-sm font-bold truncate text-slate-950 max-w-25">Nazmus Sakib</p>
+                  <p className="text-sm font-bold truncate max-w-25">Nazmus Sakib</p>
                   <p className="text-[10px] text-slate-500">Student</p>
                 </div>
               </button>
@@ -87,7 +87,7 @@ export function MainNavbar() {
 
           <div className="md:hidden flex items-center">
             <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="p-2 rounded-lg hover:bg-muted transition-colors">
-              {isMenuOpen ? <X className="w-6 h-6 text-blue-600" /> : <Menu className="w-6 h-6 text-blue-600" />}
+              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -102,18 +102,18 @@ export function MainNavbar() {
           <Link href="/dashboard" className="block px-4 py-3 text-base font-medium text-slate-900 hover:bg-slate-50 rounded-xl">Dashboard</Link>
           <div className="pt-4 border-t border-border mt-4">
 
-            <div className="grid grid-cols-2 justify-center items-center gap-4 mb-2">
-              <Link className="border rounded-2xl flex justify-center border-blue-600" href="/login">
-                <Button href="/login" variant="bordered" className="rounded-xl text-slate-900">Login</Button>
+            <div className="grid grid-cols-2 gap-4">
+              <Link href="/login">
+                <Button href="/login" variant="bordered" className="rounded-xl">Login</Button>
               </Link>
-              <Link className="border rounded-2xl flex justify-center border-blue-600" href="/register">
-                <Button href="/register" color="primary" className="rounded-xl text-slate-900">Join Free</Button>
+              <Link href="/register">
+                <Button href="/register" color="primary" className="rounded-xl">Join Free</Button>
               </Link>
             </div>
 
             <div className="flex flex-col gap-2">
-              <p className="px-4 py-3 text-xs font-bold text-muted-foreground uppercase tracking-wider text-slate-900">Account</p>
-              <button className="block w-full text-left px-4  text-base font-medium text-red-500 hover:bg-red-50 rounded-xl">Log Out</button>
+              <p className="px-4 text-xs font-bold text-muted-foreground uppercase tracking-wider">Account</p>
+              <button className="block w-full text-left px-4 py-3 text-base font-medium text-red-500 hover:bg-red-50 rounded-xl">Log Out</button>
             </div>
 
           </div>
