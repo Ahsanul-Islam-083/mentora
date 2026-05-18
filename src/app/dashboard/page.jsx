@@ -21,7 +21,8 @@ export default async function DashboardPage() {
     const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/enrollments/${user?.id}`, {
         headers: {
             Authorization: `Bearer ${token}`
-        }
+        },
+        cache:"no-store"
     })
     const enrollments = await res.json();
     // console.log(enrollments,"rrrrrrr");
