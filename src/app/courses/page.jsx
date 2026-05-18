@@ -7,8 +7,12 @@ import React from 'react';
 
 
 
-const CoursesPage = async () => {
-    const courses = await fetchCourses();
+const CoursesPage = async ({searchParams}) => {
+
+    const sParams = await searchParams;
+    // console.log(sParams);
+
+    const courses = await fetchCourses(sParams?.searchTerm || '');
     // console.log(courses);
 
 

@@ -16,7 +16,7 @@ export function MainNavbar() {
 
   const { data: session, isPending } = useSession();
   const user = session?.user;
-  console.log(user);
+  // console.log(user);
 
 
   useEffect(() => {
@@ -67,9 +67,9 @@ export function MainNavbar() {
               </> : <div className="relative group">
                 <button className="flex items-center gap-3 p-1 rounded-full hover:bg-muted transition-colors border border-transparent hover:border-border">
                   <Image
+                    alt="user"
                     width={40}
                     height={40}
-                    alt={user?.name}
                     src={user?.image || "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?q=80&w=400"}
                     className="w-10 h-10 rounded-full object-cover ring-2 ring-blue-600/10"
                   />

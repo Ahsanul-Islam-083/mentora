@@ -1,4 +1,5 @@
 
+import EnrollmentButton from '@/components/EnrollmentButton';
 import { auth } from '@/lib/auth';
 import { Chip } from '@heroui/react';
 import { BookOpen, Clock, BarChart, Users } from 'lucide-react';
@@ -6,8 +7,8 @@ import { headers } from 'next/headers';
 import Image from 'next/image';
 
 const fetchSIngleCourse = async (id, token) => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/courses/${id}`,{
-        headers:{
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/courses/${id}`, {
+        headers: {
             authorization: `Bearer ${token}`,
         }
     });
@@ -17,13 +18,13 @@ const fetchSIngleCourse = async (id, token) => {
 
 export default async function CourseDetails({ params }) {
     const { id } = await params;
-    const {token} = await auth.api.getToken({
+    const { token } = await auth.api.getToken({
         headers: await headers()
     })
-console.log(token);
+    console.log(token);
 
-    const course = await fetchSIngleCourse(id,token);
-    const { _id, thumbnail, title, price, category, duration, description, instructor } = course;
+    const course = await fetchSIngleCourse(id, token);
+    const { _id, enrollCount, thumbnail, title, price, category, duration, description, instructor } = course;
     console.log(course);
 
 
@@ -31,7 +32,7 @@ console.log(token);
         { icon: Clock, label: duration || '12h 30m' },
         { icon: BarChart, label: title || 'Beginner' },
         { icon: BookOpen, label: `24 Lessons` },
-        { icon: Users, label: ` 0 Students` },
+        { icon: Users, label: ` ${enrollCount || 0} Students` },
     ];
     return (
         <div className="max-w-7xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
@@ -110,6 +111,9 @@ console.log(token);
                                 ))}
                             </ul>
                         </div>
+
+                        <EnrollmentButton course={course} />
+
                         <p className="text-center text-xs text-slate-500 font-bold">30-Day Money-Back Guarantee • Secure Payment</p>
                     </div>
                 </div>

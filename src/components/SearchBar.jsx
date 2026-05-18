@@ -3,24 +3,29 @@
 
 import { Search } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
-
 import { useState } from "react";
+// import { useRouter, useSearchParams } from "next/navigation";
+
+// import { useState } from "react";
 
 const SearchBar = () => {
+
   const [search, setSearch] = useState();
   const router = useRouter();
   const searchParams = useSearchParams();
-  // console.log(searchParams);
+
+
 
   const handleSearch = () => {
     const params = new URLSearchParams(searchParams.toString())
-    // ?filter= ?searchTerm=node
+
     if (search) {
       params.set("searchTerm", search)
     } else {
       params.delete("searchTerm")
     }
     router.push(`/courses?${params.toString()}`)
+
 
 
   }
