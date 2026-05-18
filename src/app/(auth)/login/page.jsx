@@ -27,7 +27,7 @@ export default function Login() {
             
 
             if (error) {
-                toast.error(error.message);
+                toast(error.message);
                 return;
             }
             // router.push('/');
