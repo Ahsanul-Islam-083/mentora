@@ -7,33 +7,39 @@ import Link from 'next/link';
 import { Mail, Lock, ArrowRight } from 'lucide-react';
 
 import Image from 'next/image';
-import {  signIn } from '@/lib/auth-client';
+import { signIn } from '@/lib/auth-client';
 import toast from 'react-hot-toast';
 
 export default function Login() {
 
-        const handleLogin = async (e) => {
-            e.preventDefault();
-            const formData = new FormData(e.currentTarget)
-            const loginData = Object.fromEntries(formData.entries());
-            // console.log(registerData.name);
-            
-    
-            const { data, error } = await signIn.email({
-                ...loginData,
-                callbackURL:'/',
-            })
-            // console.log({data,error});
+    const handleLogin = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.currentTarget)
+        const loginData = Object.fromEntries(formData.entries());
+        // console.log(registerData.name);
 
-            
 
-            if (error) {
-                toast(error.message);
-                return;
-            }
-            // router.push('/');
-    
+        const { data, error } = await signIn.email({
+            ...loginData,
+            callbackURL: '/',
+        })
+        // console.log({data,error});
+
+
+
+        if (error) {
+            toast(error.message);
+            return;
         }
+        // router.push('/');
+
+    }
+
+    const handleGoogleLogin = async () => {
+      await signIn.social({
+            provider: "google",
+        });
+    }
 
     return (
         <div className="min-h-[80vh] flex flex-col bg-slate-50">
@@ -52,6 +58,7 @@ export default function Login() {
 
                         <div className="space-y-4">
                             <Button
+                                onPress={handleGoogleLogin}
                                 variant="bordered"
                                 className="w-full h-12 font-bold rounded-2xl border-slate-200 hover:bg-slate-50 transition-colors gap-3"
                             >
@@ -76,7 +83,7 @@ export default function Login() {
                         </div>
 
                         <form
-                        onSubmit={handleLogin}
+                            onSubmit={handleLogin}
                             className="space-y-6"
                         >
                             <div className="space-y-2">
