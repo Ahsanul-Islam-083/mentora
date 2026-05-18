@@ -11,6 +11,10 @@ export const auth = betterAuth({
         // Optional: if you don't provide a client, database transactions won't be enabled.
         client
     }),
+    trustedOrigins: [
+        "https://mentora-xi-liart.vercel.app",
+        "http://localhost:3000", // keep for local dev
+    ],
     emailAndPassword: {
         enabled: true,
     },
@@ -21,7 +25,7 @@ export const auth = betterAuth({
             maxAge: 5 * 24 * 60 * 60,
         }
     },
-     plugins: [
+    plugins: [
         jwt(),
     ]
 });
