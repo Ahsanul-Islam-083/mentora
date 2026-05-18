@@ -23,7 +23,8 @@ export default function EnrollmentButton({ course }) {
             studentName: session?.user?.name,
             studentEmail: session?.user?.email,
             courseTitle: course?.title,
-            thumbnail: course?.thumbnail
+            thumbnail: course?.thumbnail,
+            courseId: course?._id
         }
 
 

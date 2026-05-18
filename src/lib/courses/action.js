@@ -2,7 +2,6 @@
 
 import { headers } from "next/headers"
 import { auth } from "../auth"
-import { object } from "better-auth"
 
 export const addCourse = async (formData) => {
     const { token } = await auth.api.getToken({

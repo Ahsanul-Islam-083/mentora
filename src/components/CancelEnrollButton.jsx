@@ -17,7 +17,6 @@ const CancelEnrollButton = ({ id }) => {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/enrollments/${id}`,{
             method: "DELETE",
             headers:{
-                "Content-type": "application/json",
                 Authorization: `Bearer ${token}`
             }
         })
@@ -62,7 +61,7 @@ const CancelEnrollButton = ({ id }) => {
                                 Keep Enrollment
                             </Button>
                             <Button
-                            onClick={handleCancel}
+                            onPress={handleCancel}
                                 slot="close"
                                 color="danger"
                                 className="font-bold"
