@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { Mail, Lock, ArrowRight } from 'lucide-react';
 
 import Image from 'next/image';
-import { signIn } from '@/lib/auth-client';
+import { authClient, signIn } from '@/lib/auth-client';
 
 export default function Login() {
 
@@ -22,7 +22,10 @@ export default function Login() {
                 ...loginData,
                 callbackURL:'/',
             })
-            console.log({data,error});
+            // console.log({data,error});
+
+            
+
             if (error) {
                 toast.error(error.message);
                 return;
